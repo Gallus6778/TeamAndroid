@@ -4,5 +4,8 @@
     <string name="etape2"><u><b>ETAPE 2</b></u></string>
     <string name="etape3"><u><b>ETAPE 3</b></u></string>
     <string name="etape4"><u><b>ETAPE 4</b></u></string>
-    <string name="filmer_cni"><b>Filmer la CNI</b></string>
+    <string name="filmer_cni"><b>Filmer la CNI(Recto)</b></string>
+    <string name="filmer_cni_verso"><b>Filmer la CNI(Verso)</b></string>
+    <string name="point_vente_agent">Point de vente de l\'agent</string>
+    <string name="point_agent">Point de l\'agent</string>
 </resources>

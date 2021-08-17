@@ -59,7 +59,7 @@
         android:orientation="vertical"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="35dp">
 
         <EditText
             android:id="@+id/entreprise_agent"
@@ -78,7 +78,7 @@
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:background="@drawable/custom_input"
-            android:layout_marginBottom="6dp"/>
+            android:layout_marginBottom="10dp"/>
 
         <EditText
             android:id="@+id/smobilpay_id_utilisateur"
@@ -97,7 +97,7 @@
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:background="@drawable/custom_input"
-            android:layout_marginBottom="6dp"/>
+            android:layout_marginBottom="10dp"/>
 
         <EditText
             android:id="@+id/profession_agent"
@@ -116,54 +116,86 @@
             android:paddingTop="6dp"
             android:paddingBottom="6dp"
             android:background="@drawable/custom_input"
-            android:layout_marginBottom="6dp"/>
+            android:layout_marginBottom="15dp"/>
 
-        <EditText
-            android:id="@+id/photo_point_de_vente_agent"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/photo_point_de_vente_agent"
-            android:inputType="text"
-            android:textSize="18sp"
-            android:drawableStart="@drawable/ic_camera_custom"
-            android:drawableLeft="@drawable/ic_camera"
-            android:drawablePadding="10dp"
             android:textColor="@color/white"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:background="@drawable/custom_input"
-            android:layout_marginBottom="6dp"/>
+            android:layout_gravity="center"
+            android:text="@string/point_vente_agent"
+            android:gravity="center_horizontal"
+            android:textSize="15dp"/>
 
-        <EditText
-            android:id="@+id/photo_point_agent"
+        <ImageView
+            android:id="@+id/prendre_photo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/group_18" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/photo_point_agent"
-            android:inputType="text"
-            android:textSize="18sp"
-            android:drawableStart="@drawable/ic_camera_custom"
-            android:drawableLeft="@drawable/ic_camera"
-            android:drawablePadding="10dp"
             android:textColor="@color/white"
-            android:paddingStart="6dp"
-            android:paddingEnd="6dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            android:background="@drawable/custom_input"
-            android:layout_marginBottom="6dp"/>
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@string/point_agent"
+            android:gravity="center_horizontal"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:id="@+id/photo_prise_2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/group_18" />
+
+<!--        <EditText-->
+<!--            android:id="@+id/photo_point_de_vente_agent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:hint="@string/photo_point_de_vente_agent"-->
+<!--            android:inputType="text"-->
+<!--            android:textSize="18sp"-->
+<!--            android:drawableStart="@drawable/ic_camera_custom"-->
+<!--            android:drawableLeft="@drawable/ic_camera"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:paddingStart="6dp"-->
+<!--            android:paddingEnd="6dp"-->
+<!--            android:paddingTop="6dp"-->
+<!--            android:paddingBottom="6dp"-->
+<!--            android:background="@drawable/custom_input"-->
+<!--            android:layout_marginBottom="15dp"/>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/photo_point_agent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:hint="@string/photo_point_agent"-->
+<!--            android:inputType="text"-->
+<!--            android:textSize="18sp"-->
+<!--            android:drawableStart="@drawable/ic_camera_custom"-->
+<!--            android:drawableLeft="@drawable/ic_camera"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:paddingStart="6dp"-->
+<!--            android:paddingEnd="6dp"-->
+<!--            android:paddingTop="6dp"-->
+<!--            android:paddingBottom="6dp"-->
+<!--            android:background="@drawable/custom_input"-->
+<!--            android:layout_marginBottom="6dp"/>-->
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:layout_marginTop="320dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginTop="460dp">
 
         <ImageView
             android:id="@+id/link_to_end_step"

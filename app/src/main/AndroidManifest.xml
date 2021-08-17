@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamAndroid">
+
         <activity android:name=".InfosSupprimerActivity"></activity>
         <activity android:name=".InfosModifierActivity" />
         <activity android:name=".InfosOneAgentActivity" /> <!-- Liste des Agents -->

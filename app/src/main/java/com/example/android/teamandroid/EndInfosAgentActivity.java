@@ -36,7 +36,7 @@ public class EndInfosAgentActivity extends AppCompatActivity {
             }
         });
 
-        // Autre Lien pour lister les agents
+// Autre Lien pour lister les agents
         this.navigation_dashboard = (BottomNavigationItemView) findViewById(R.id.navigation_dashboard);
 
         navigation_dashboard.setOnClickListener(new View.OnClickListener() {

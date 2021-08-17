@@ -16,24 +16,49 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+
 public class TakePictureActivity extends AppCompatActivity {
 
     private ImageView link_to_next_step;
     ImageView prendre_photo;
-    ImageView photo_prise;
+//    ImageView photo_prise;
+    ImageView photo_prise_2;
 
     Uri imageAffiche;
+
+    private BottomNavigationItemView navigation_dashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_picture);
         
-        prendre_photo=findViewById(R.id.photo_prise);
-        photo_prise=findViewById(R.id.photo_prise);
+        prendre_photo=findViewById(R.id.prendre_photo);
+//        photo_prise=findViewById(R.id.photo_prise);
+        photo_prise_2=findViewById(R.id.photo_prise_2);
 
-        // Utiliser la camera du telephone au click sur le bouton
+        // Utiliser la camera du telephone au click sur le bouton Recto
         prendre_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED ||
+                            checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED){
+                        String[]tabPermission={Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+                        requestPermissions(tabPermission, 100);
+                    }else{
+                        OpenCamera();
+                    }
+                }else
+                    OpenCamera();
+            }
+
+
+        });
+
+        // Utiliser la camera du telephone au click sur le bouton verso
+        photo_prise_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
@@ -59,6 +84,19 @@ public class TakePictureActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent otherActivity = new Intent(getApplicationContext(), InfosAgentActivity.class);
                 startActivity(otherActivity);
+            }
+        });
+
+        // ==================================================================================================
+        // Lien pour lister les agents
+        this.navigation_dashboard = (BottomNavigationItemView) findViewById(R.id.navigation_dashboard);
+
+        navigation_dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(), ListAgentActivity.class);
+                startActivity(otherActivity);
+                finish();
             }
         });
     }
@@ -87,8 +125,10 @@ public class TakePictureActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode==101)
+        if(requestCode==101) {
             prendre_photo.setImageURI(imageAffiche);
+            photo_prise_2.setImageURI(imageAffiche);
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 }

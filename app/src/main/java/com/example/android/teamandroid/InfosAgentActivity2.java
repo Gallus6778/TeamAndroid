@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+
 public class InfosAgentActivity2 extends AppCompatActivity {
 
     private TextView etape_1;
     private TextView etape_2;
     private ImageView link_to_next_step;
+
+    private BottomNavigationItemView navigation_dashboard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +55,19 @@ public class InfosAgentActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent otherActivity = new Intent(getApplicationContext(), InfosAgentActivity3.class);
+                startActivity(otherActivity);
+                finish();
+            }
+        });
+
+// ==================================================================================================
+        // Lien pour lister les agents
+        this.navigation_dashboard = (BottomNavigationItemView) findViewById(R.id.navigation_dashboard);
+
+        navigation_dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent otherActivity = new Intent(getApplicationContext(), ListAgentActivity.class);
                 startActivity(otherActivity);
                 finish();
             }
